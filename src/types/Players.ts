@@ -1,1 +1,0 @@
-export type Players = "X" | "O"

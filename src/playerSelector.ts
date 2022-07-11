@@ -1,5 +1,9 @@
-import { Players } from "./types/Players";
+import { setTokens } from "./globals";
 
-export const playerSelector = (target: EventTarget): Players => {
-    // to be finished
+export const playerSelector = (target: HTMLInputElement): void => {
+    if (target.value === "X") {
+        setTokens("X")
+    } else {
+        setTokens("O")
+    }
 }
