@@ -4,7 +4,7 @@ module.exports = {
     mode: "development",
     devtool: "eval-source-map",
     entry: "./src/app.ts",
-    modules: {
+    module: {
         rules: [
             {
                 test: /\.ts$/,
