@@ -14,4 +14,6 @@ export const setTokens = (value: Tokens): void => {
     } else {
         cpu = "X"
     }
+
+    console.log(`user: ${user} | cpu: ${cpu}`)
 }
