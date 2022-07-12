@@ -3,6 +3,6 @@ an unbeatable tic tac toe game
 
 ### TODO
 - implement:
-    - cpuPlay function
+    - cpu functions (finish and polish -> cpuHandler, cpuFirstMove)
     - checkForWinner function
     - endGame function
