@@ -7,9 +7,9 @@ export const selectO = document.getElementById("playerO") as HTMLButtonElement
 
 export let user: Tokens
 export let cpu: Tokens
-export const setTokens = (value: Tokens): void => {
-    user = value
-    if (value === "X") {
+export const setTokens = (token: Tokens): void => {
+    user = token
+    if (token === "X") {
         cpu = "O"
     } else {
         cpu = "X"
