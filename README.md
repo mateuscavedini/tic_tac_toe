@@ -3,10 +3,6 @@ an unbeatable tic tac toe game
 
 ### TODO
 - implement:
-<<<<<<< HEAD
-    - cpu functions
-=======
->>>>>>> cpu
     - checkForWinner function
     - endGame function
     - add comments
