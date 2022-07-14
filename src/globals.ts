@@ -4,11 +4,7 @@ export let user: Tokens
 export let cpu: Tokens
 export const setTokens = (token: Tokens): void => {
     user = token
-    if (user === "X") {
-        cpu = "O"
-    } else {
-        cpu = "X"
-    }
+    cpu = user === "X" ? "O" : "X"
 
     console.log(`user: ${user} | cpu: ${cpu}`)
 }

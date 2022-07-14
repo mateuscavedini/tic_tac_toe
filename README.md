@@ -3,6 +3,19 @@ an unbeatable tic tac toe game
 
 ### TODO
 - implement:
+<<<<<<< HEAD
     - cpu functions
+=======
+>>>>>>> cpu
     - checkForWinner function
     - endGame function
+    - add comments
+
+- improve:
+    - substitute if's for while loops (checkPairs...)
+    - improve result from checkPairs
+        - return {hasPair: true, targetSquareIndex: targetIndex: number | undefined}
+        - implement checking before using targetSquareIndex
+    - improve logic when user places first token in the middle
+    - reuse checkSquare function
+    - improve names
