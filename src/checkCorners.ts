@@ -1,14 +1,15 @@
+import { winningCornersCombinations } from "./globals"
 import { CornersResult } from "./interfaces/CornersResult"
 
 const cornerPositions: number[] = [0, 2, 6, 8]
 
-export const checkCorners = (squares: NodeListOf<HTMLDivElement>, combinations: number[][]): CornersResult => {
+export const checkCorners = (squares: NodeListOf<HTMLDivElement>): CornersResult => {
     let squareCombination: HTMLDivElement[]
     let tokenCombination: string[]
 
     let targetIndex: number | undefined
 
-    for (let combination of combinations) {
+    for (let combination of winningCornersCombinations) {
         squareCombination = combination.map(position => squares[position])
         tokenCombination = squareCombination.map(square => square.textContent ? square.textContent : "")
 

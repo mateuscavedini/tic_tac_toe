@@ -1,13 +1,14 @@
+import { winningCombinations } from "./globals";
 import { PairsResult } from "./interfaces/PairsResult";
 import { Tokens } from "./types/Tokens";
 
-export const checkPairs = (squares: NodeListOf<HTMLDivElement>, combinations: number[][], player: Tokens): PairsResult => {
+export const checkPairs = (squares: NodeListOf<HTMLDivElement>, player: Tokens): PairsResult => {
     let squareCombination: HTMLDivElement[]
     let tokenCombination: string[]
 
     let targetIndex: number | undefined
     
-    for (let combination of combinations) {
+    for (let combination of winningCombinations) {
         squareCombination = combination.map(position => squares[position])
         tokenCombination = squareCombination.map(square => square.textContent ? square.textContent : "")
 
