@@ -1,7 +1,9 @@
 /* VARIABLES */
 :root {
+    --color-main: hsl(16, 100%, 59%);
     --color-bg: hsl(0, 2%, 10%);
     --color-bg-alt: hsl(0, 0%, 15%);
+    --color-border: hsl(0, 0%, 45%);
 }
 
 /* RESET */
@@ -44,6 +46,7 @@ body {
 button {
     padding: 0.25rem 1rem;
     margin: 1rem 0.5rem 0 0.5rem;
+    cursor: pointer;
 }
 
 header {
@@ -63,14 +66,33 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3rem;
 }
 
 #grid div {
     height: 6rem;
     width: 6rem;
-    color: hsl(16, 100%, 59%);
+    color: var(--color-main);
     font-size: 3rem;
     cursor: pointer;
+}
+
+#result {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    visibility: hidden;
+}
+
+#restartBtn {
+    background-color: transparent;
+    font-size: 1.5rem;
+    border-color: var(--color-main);
+    opacity: 0.75;
+    transition: opacity 250ms ease-out;
+}
+
+#restartBtn:hover {
+    opacity: 1;
 }
 
 footer {
@@ -91,16 +113,17 @@ footer {
 }
 
 .border-right {
-    border-right: 1px solid hsl(0, 0%, 45%);
+    border-right: 1px solid var(--color-border);
 }
 
 .border-bottom {
-    border-bottom: 1px solid hsl(0, 0%, 45%);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .disabled {
     opacity: 0.2;
     user-select: none;
+    pointer-events: none;
 }
 
 .enabled {
@@ -112,6 +135,10 @@ footer {
     animation: translateAnimation 1s cubic-bezier(0.56, -0.56, 1, 1) forwards;
 }
 
+.changeColor {
+    animation: changingColorsAnimation 3s ease-in-out forwards;
+}
+
 /* KEYFRAMES */
 @keyframes translateAnimation {
     0% {
@@ -121,6 +148,27 @@ footer {
     100% {
         transform: translateY(-200px);
         opacity: 0;
+    }
+}
+
+@keyframes changingColorsAnimation {
+    0% {
+        background-color: var(--color-bg-alt);
+    }
+    16.5% {
+        background-color: white;
+    }
+    33% {
+        background-color: var(--color-bg-alt);
+    }
+    49.5% {
+        background-color: white;
+    }
+    66% {
+        background-color: var(--color-bg-alt);
+    }
+    100% {
+        background-color: white;
     }
 }
 
