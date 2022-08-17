@@ -25,3 +25,5 @@ export let isOver = false
 export const setIsOver = (state: boolean): void => {
     isOver = state
 }
+
+export const result = document.getElementById("result") as HTMLParagraphElement

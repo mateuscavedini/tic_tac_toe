@@ -1,9 +1,10 @@
 import { checkBoard } from "./checkBoard"
-import { user, winningCombinations } from "./globals"
+import { displayWinner } from "./displayWinner"
+import { setIsOver, user, winningCombinations } from "./globals"
 import { GameStatusResult } from "./interfaces/GameStatusResult"
 
-export const checkGameStatus = (squares: NodeListOf<HTMLDivElement>): GameStatusResult => {
-    let squareCombination: HTMLDivElement[]
+export const checkGameStatus = (squares: NodeListOf<HTMLDivElement>)/*: GameStatusResult*/ => {
+    let squareCombination: HTMLDivElement[]= []
     let tokenCombination: string[]
     let hasWinner: boolean = false
     let _winner: string | undefined
@@ -22,6 +23,7 @@ export const checkGameStatus = (squares: NodeListOf<HTMLDivElement>): GameStatus
 
         if (hasWinner) {
             _winner = tokenCombination[0] === user ? "user" : "cpu"
+            displayWinner(_winner, squareCombination)
             break
         }
     }
