@@ -7,7 +7,7 @@ export const checkGameStatus = (squares: NodeListOf<HTMLDivElement>): GameStatus
     let tokenCombination: string[]
     let hasWinner: boolean = false
     let _winner: string | undefined
-    
+
     for (let combination of winningCombinations) {
         squareCombination = combination.map(position => squares[position])
         tokenCombination = squareCombination.map(square => square.textContent ? square.textContent : "")
@@ -15,6 +15,8 @@ export const checkGameStatus = (squares: NodeListOf<HTMLDivElement>): GameStatus
         hasWinner = tokenCombination.every(token => {
             if (token !== "") {
                 return token === tokenCombination[0]
+            } else {
+                return false
             }
         })
 
@@ -27,10 +29,10 @@ export const checkGameStatus = (squares: NodeListOf<HTMLDivElement>): GameStatus
     const hasEmptySquare: boolean = checkBoard(squares)
 
     if (hasWinner) {
-        return {gameStatus: "over", hasWinner: true, winner: _winner}
+        return { gameStatus: "over", winner: _winner }
     } else if (!hasEmptySquare) {
-        return {gameStatus: "over", hasWinner: false}
+        return { gameStatus: "over" }
     } else {
-        return {gameStatus: "not over", hasWinner: false}
+        return { gameStatus: "not over" }
     }
 }

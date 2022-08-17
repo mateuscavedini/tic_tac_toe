@@ -20,3 +20,8 @@ export const winningCornersCombinations: number[][] = [
     [0, 3, 6], [2, 5, 8],
     [0, 4, 8], [2, 4, 6]
 ]
+
+export let isOver = false
+export const setIsOver = (state: boolean): void => {
+    isOver = state
+}

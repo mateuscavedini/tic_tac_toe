@@ -12,8 +12,6 @@ export const checkCorners = (squares: NodeListOf<HTMLDivElement>): CornersResult
     for (let combination of winningCornersCombinations) {
         squareCombination = combination.map(position => squares[position])
         tokenCombination = squareCombination.map(square => square.textContent ? square.textContent : "")
-
-        
         
         let emptyTokenCount: number = 0
         tokenCombination.forEach(token => {

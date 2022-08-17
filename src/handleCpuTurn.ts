@@ -5,10 +5,6 @@ import { handleCpuPlay } from "./handleCpuPlay"
 import { CornersResult } from "./interfaces/CornersResult"
 import { PairsResult } from "./interfaces/PairsResult"
 
-
-
-
-
 export const handleCpuTurn = (squares: NodeListOf<HTMLDivElement>): void => {
     const cpuResults: PairsResult = checkPairs(squares, cpu)
     const userResults: PairsResult = checkPairs(squares, user)
