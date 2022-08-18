@@ -5,13 +5,16 @@ import { handleCpuTurn } from "./handleCpuTurn"
 import { handleGameStatus } from "./handleGameStatus"
 
 export const handleSquareClick = (squares: NodeListOf<HTMLDivElement>, e: Event): void => {
+    if (isOver) {
+        return
+    }
+        
     const target = e.target as HTMLDivElement
     const isEmpty: boolean = checkSquare(target)
 
-    if (isEmpty && !isOver) {
+    if (isEmpty) {
         addToken(target, user)
-        handleGameStatus(squares)
         handleCpuTurn(squares)
-        handleGameStatus(squares)
+        return handleGameStatus(squares)
     }
 }

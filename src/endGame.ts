@@ -1,7 +1,8 @@
-import { result, setIsOver } from "./globals"
+import { displayResult } from "./displayResult"
+import { setIsOver } from "./globals"
 
-export const endGame = (winner?: string): void => {
-    result.style.visibility = "visible"
+export const endGame = (winner?: string, squares?: HTMLDivElement[]): void => {
+    displayResult(winner, squares)
 
     return setIsOver(true)
 }

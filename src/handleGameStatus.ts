@@ -10,7 +10,8 @@ export const handleGameStatus = (squares: NodeListOf<HTMLDivElement>): void => {
     if (gameStatus === "not over") {
         return setIsOver(false)
     } else if (winner) {
-        return endGame(winner)
+        const winningSquares = results.winningSquares!
+        return endGame(winner, winningSquares)
     } else {
         return endGame()
     }
