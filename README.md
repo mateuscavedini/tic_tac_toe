@@ -2,11 +2,6 @@
 an unbeatable tic tac toe game
 
 ### TODO
-- implement:
-    - checkForWinner function
-    - endGame function
-    - add comments
-
 - improve:
     - substitute if's for while loops (checkPairs...)
     - improve result from checkPairs
